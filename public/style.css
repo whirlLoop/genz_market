@@ -1,0 +1,22 @@
+:root {
+	--font-headline: "Noto Sans", sans-serif;
+	--font-normal: "Mukta", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-headline);
+}
+
+h4,
+h5,
+p,
+ul,
+label,
+a,
+span,
+summary,
+input {
+	font-family: var(--font-normal);
+}
