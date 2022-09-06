@@ -10,7 +10,14 @@ import SignupLanding from "./pages/SignupLanding";
 export default function App() {
 	return (
 		<Box m="auto">
-			<Box sx={{ borderBottom: 1, borderColor: "secondary.main", marginBottom:"10px", borderWidth:"0.01em" }}>
+			<Box
+				sx={{
+					borderBottom: 1,
+					borderColor: "secondary.main",
+					marginBottom: "10px",
+					borderWidth: "0.01em",
+				}}
+			>
 				<Navbar />
 			</Box>
 			<Routes>

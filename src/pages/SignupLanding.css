@@ -1,0 +1,13 @@
+.btn-link {
+    display: block;
+    width: 200px;
+    padding: 6px;
+    text-decoration: none;
+}
+.active {
+	color: white;
+}
+
+.inactive {
+	color: rgba(0, 0, 0, 0.26);
+}
