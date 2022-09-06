@@ -1,12 +1,17 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import Landing from "./pages/Landing";
 import "../public/style.css";
+import Navbar from "./components/common/Navbar";
 
 export default function App() {
 	return (
 		<Box m="auto">
-			<Landing />
+			<Navbar />
+			<Routes>
+				<Route path="/" element={<Landing />} />
+			</Routes>
 		</Box>
 	);
 }
