@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Container, Button, Typography, Box } from "@mui/material";
-import WorkDoodle from "../assets/work-doodle-icon.jpg";
-import MicrosoftIcon from "../assets/logos/microsoft.svg";
-import GodaddyIcon from "../assets/logos/godaddy.svg";
+import WorkDoodle from "../../assets/work-doodle-icon.jpg";
+import MicrosoftIcon from "../../assets/logos/microsoft.svg";
+import GodaddyIcon from "../../assets/logos/godaddy.svg";
 
 export default function Landing() {
 	return (
@@ -11,7 +11,7 @@ export default function Landing() {
 				container
 				rowSpacing={1}
 				columnSpacing={{ xs: 1, sm: 2, md: 4 }}
-				sx={{ display: "flex", alignItems: "center" }}
+				sx={{ display: "flex", alignItems: "center", padding:"0" }}
 				p
 			>
 				<Grid item xs={7}>
