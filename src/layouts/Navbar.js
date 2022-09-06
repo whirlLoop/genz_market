@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Stack, Container, Button } from "@mui/material";
-import Logo from "../../assets/logos/logo.png";
+import Logo from "../assets/logos/logo.png";
 import "./Navbar.css";
 
 const Navbar = () => {

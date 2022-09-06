@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import Landing from "./pages/Landing";
 import "../public/style.css";
-import Navbar from "./components/common/Navbar";
+import Navbar from "./layouts/Navbar";
 
 export default function App() {
 	return (
