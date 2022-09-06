@@ -9,15 +9,11 @@ const Navbar = () => {
 		<Container>
 			<Stack
 				direction="row"
-				justifyContent="center"
 				alignItems="center"
 				sx={{
 					gap: { sm: "122px", xs: "40px" },
-					mt: { sm: "32px", xs: "20px" },
-					justifyContent: "none",
-					p: "0",
 				}}
-				px="20px"
+				py="10px"
 			>
 				<Link to="/">
 					<img src={Logo} className="logo" />
@@ -29,10 +25,10 @@ const Navbar = () => {
 						fontSize="24px"
 						alignItems="flex-end"
 					>
-						<Link to="#" className="link">
+						<Link to="#" className="link nav-text">
 							Find Work
 						</Link>
-						<Link to="#" className="link">
+						<Link to="#" className="link nav-text">
 							Find Talent
 						</Link>
 					</Stack>
@@ -42,10 +38,10 @@ const Navbar = () => {
 						fontSize="24px"
 						alignItems="flex-end"
 					>
-						<Link to="#" className="link">
+						<Link to="#" className="link nav-text">
 							Login
 						</Link>
-						<Link to="#" className="link">
+						<Link to="/signup/landing/" className="link nav-text">
 							<Button variant="contained">Signup</Button>
 						</Link>
 					</Stack>
