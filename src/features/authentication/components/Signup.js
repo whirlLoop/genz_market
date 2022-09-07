@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Box, Stack, TextField } from "@mui/material";
+import {
+	Box,
+	Stack,
+	TextField,
+	InputAdornment,
+	IconButton,
+} from "@mui/material";
+import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CountryDropdown } from "react-country-region-selector";
-const style = {
+const phoneStyle = {
 	"& .MuiOutlinedInput-root": {
 		"& input + fieldset": {
 			borderColor: "none",
@@ -10,7 +18,20 @@ const style = {
 		},
 	},
 };
+const textFieldStyles = {
+	"& .MuiOutlinedInput-root": {
+		"& input + fieldset": {
+			outline: "none",
+		},
+		"&:hover fieldset": {
+			borderColor: "#bdbdbd",
+		},
+	},
+};
 export default function Signup({ userType }) {
+	const [showPassword, setShowPassword] = useState(false);
+	const handleClickShowPassword = () => setShowPassword(!showPassword);
+
 	return (
 		<Box component="form">
 			<Stack direction="row" justifyContent="space-between">
@@ -23,6 +44,7 @@ export default function Signup({ userType }) {
 					sx={{
 						width: "45%",
 						background: "none",
+						...textFieldStyles,
 					}}
 				/>
 				<TextField
@@ -33,6 +55,7 @@ export default function Signup({ userType }) {
 					label="Last Name"
 					sx={{
 						width: "45%",
+						...textFieldStyles,
 					}}
 				/>
 			</Stack>
@@ -44,6 +67,7 @@ export default function Signup({ userType }) {
 					placeholder="Email Address"
 					label="Email"
 					fullWidth
+					sx={textFieldStyles}
 				/>
 			</Stack>
 			{userType == "creator" ? (
@@ -52,9 +76,15 @@ export default function Signup({ userType }) {
 						id="phoneNumber"
 						type="tel"
 						name="phoneNumber"
-						label="🇰🇪 +254"
+						label="Phone Number"
+						InputProps={{
+							startAdornment: (
+								<InputAdornment position="start">🇰🇪 +254</InputAdornment>
+							),
+						}}
 						fullWidth
 						placeholder="Phone Number"
+						sx={textFieldStyles}
 					/>
 				</Stack>
 			) : (
@@ -82,7 +112,7 @@ export default function Signup({ userType }) {
 						type="tel"
 						name="phoneNumber"
 						placeholder="Phone Number"
-						sx={style}
+						sx={phoneStyle}
 						fullWidth
 					/>
 				</Stack>
@@ -91,11 +121,31 @@ export default function Signup({ userType }) {
 			<Stack marginTop="40px">
 				<TextField
 					id="password"
-					type="password"
+					type={showPassword ? "text" : "password"}
 					name="password"
 					label="Password"
 					fullWidth
 					placeholder="Password"
+					InputProps={{
+						endAdornment: (
+							<InputAdornment position="end">
+								<IconButton
+									aria-label="toggle password visibility"
+									onClick={handleClickShowPassword}
+									sx={{
+										fontSize: "0.8em",
+									}}
+								>
+									{showPassword ? (
+										<FontAwesomeIcon icon={faEyeSlash} />
+									) : (
+										<FontAwesomeIcon icon={faEye} />
+									)}
+								</IconButton>
+							</InputAdornment>
+						),
+					}}
+					sx={textFieldStyles}
 				/>
 			</Stack>
 		</Box>
