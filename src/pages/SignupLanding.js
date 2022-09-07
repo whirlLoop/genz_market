@@ -12,6 +12,7 @@ import {
 	Box,
 } from "@mui/material";
 import "./SignupLanding.css";
+import Signup from "../features/authentication/components/Signup";
 
 const SignupLanding = () => {
 	const [radioValue, setRadioValue] = useState("");
@@ -145,6 +146,9 @@ const SignupLanding = () => {
 							</Button>
 						</Stack>
 					)}
+					<Box marginTop="20px">
+						<Signup userType={radioValue} />
+					</Box>
 				</Box>
 			</Box>
 		</Container>
