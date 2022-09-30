@@ -6,6 +6,8 @@ import {
 	TextField,
 	InputAdornment,
 	IconButton,
+	Button,
+	Typography,
 } from "@mui/material";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,12 +30,53 @@ const textFieldStyles = {
 		},
 	},
 };
-export default function Signup({ userType }) {
+export default function Signup({ userType, setUserType }) {
 	const [showPassword, setShowPassword] = useState(false);
 	const handleClickShowPassword = () => setShowPassword(!showPassword);
 
 	return (
 		<Box component="form">
+			<Box marginBottom="20px">
+				{userType == "creator" ? (
+					<Stack
+						direction="row"
+						justifyContent="space-between"
+						alignItems="center"
+					>
+						<Typography
+							variant="h5"
+							sx={{
+								textAlign: "center",
+								fontWeight: "600",
+							}}
+						>
+							Start creating today!
+						</Typography>
+						<Button variant="contained" onClick={() => setUserType("client")}>
+							Or join as a client
+						</Button>
+					</Stack>
+				) : (
+					<Stack
+						direction="row"
+						justifyContent="space-between"
+						alignItems="center"
+					>
+						<Typography
+							variant="h5"
+							sx={{
+								textAlign: "center",
+								fontWeight: "600",
+							}}
+						>
+							Join to hire incredible talent today!
+						</Typography>
+						<Button variant="contained" onClick={() => setUserType("creator")}>
+							Or join as a creator
+						</Button>
+					</Stack>
+				)}
+			</Box>
 			<Stack direction="row" justifyContent="space-between">
 				<TextField
 					id="firstName"
@@ -154,4 +197,5 @@ export default function Signup({ userType }) {
 
 Signup.propTypes = {
 	userType: PropTypes.string.isRequired,
+	setUserType: PropTypes.func.isRequired,
 };

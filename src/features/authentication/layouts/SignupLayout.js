@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-	Container,
-	FormControl,
-	RadioGroup,
-	FormControlLabel,
-	Radio,
-	Button,
-	Stack,
-	Typography,
-	Box,
-} from "@mui/material";
+import { Container, Button, Stack, Typography, Box } from "@mui/material";
 import "./SignupLayout.css";
 import Signup from "../components/Signup";
+import TypeOfUserForm from "../components/TypeOfUserForm";
 
 function SignupLayout() {
 	const [radioValue, setRadioValue] = useState("");
@@ -39,36 +30,14 @@ function SignupLayout() {
 					borderRadius: 1,
 				}}
 			>
-				<Box sx={{ display: hasSetRadioValue ? "none" : "block" }}>
-					<FormControl>
-						<Typography
-							variant="h5"
-							sx={{
-								textAlign: "center",
-								fontWeight: "600",
-								marginBottom: "20px",
-							}}
-						>
-							Why Are you joining us?
-						</Typography>
-						<RadioGroup
-							aria-labelledby="demo-controlled-radio-buttons-group"
-							name="controlled-radio-buttons-group"
-							value={radioValue}
-							onChange={(e) => setRadioValue(e.target.value.toLowerCase())}
-						>
-							<FormControlLabel
-								value="creator"
-								control={<Radio />}
-								label="Im a creator looking for work"
-							/>
-							<FormControlLabel
-								value="client"
-								control={<Radio />}
-								label="Im a client to hire"
-							/>
-						</RadioGroup>
-					</FormControl>
+				<Box
+					sx={{ display: hasSetRadioValue ? "none" : "block" }}
+					data-testid="getTypeOfUserFormBox"
+				>
+					<TypeOfUserForm
+						radioValue={radioValue}
+						setRadioValue={setRadioValue}
+					/>
 					<Stack
 						justifyContent="center"
 						alignItems="center"
@@ -81,6 +50,7 @@ function SignupLayout() {
 							disabled={radioValue ? false : true}
 							sx={{ width: "200px", padding: "6px" }}
 							onClick={() => setHasSetRadioValue(true)}
+							data-testid="createAccountButton"
 						>
 							{radioValue ? `Join as a ${radioValue}` : "Create Account"}
 						</Button>
@@ -99,56 +69,11 @@ function SignupLayout() {
 					</Stack>
 				</Box>
 				<Box
+					marginTop="20px"
 					sx={{ display: hasSetRadioValue ? "block" : "none", width: "100%" }}
+					data-testid="signUpFormBox"
 				>
-					{radioValue == "creator" ? (
-						<Stack
-							direction="row"
-							justifyContent="space-between"
-							alignItems="center"
-						>
-							<Typography
-								variant="h5"
-								sx={{
-									textAlign: "center",
-									fontWeight: "600",
-								}}
-							>
-								Start creating today!
-							</Typography>
-							<Button
-								variant="contained"
-								onClick={() => setRadioValue("client")}
-							>
-								Or join as a client
-							</Button>
-						</Stack>
-					) : (
-						<Stack
-							direction="row"
-							justifyContent="space-between"
-							alignItems="center"
-						>
-							<Typography
-								variant="h5"
-								sx={{
-									textAlign: "center",
-									fontWeight: "600",
-								}}
-							>
-								Join to hire incredible talent today!
-							</Typography>
-							<Button
-								variant="contained"
-								onClick={() => setRadioValue("creator")}
-							>
-								Or join as a creator
-							</Button>
-						</Stack>
-					)}
-					<Box marginTop="20px">
-						<Signup userType={radioValue} />
-					</Box>
+					<Signup userType={radioValue} setUserType={setRadioValue} />
 				</Box>
 			</Box>
 		</Container>
