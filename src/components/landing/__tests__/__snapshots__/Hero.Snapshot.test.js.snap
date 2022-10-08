@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  data-testid="landing-component"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container css-uk0h20-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-7 css-uqwprf-MuiGrid-root"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h2 css-689ebp-MuiTypography-root"
+      >
+        Freedom to express your creative self
+      </h2>
+      <span
+        className="MuiTypography-root MuiTypography-p css-1kbix5p-MuiTypography-root"
+      >
+        Forget the old rules. You can have the best people. Right now. Right here.
+      </span>
+      <div
+        className="MuiBox-root css-jn01mi"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-di5245-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Find Work
+        </button>
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Find Talent
+        </button>
+      </div>
+      <div
+        className="MuiBox-root css-jn01mi"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Trusted by
+        </p>
+        <div
+          className="MuiBox-root css-1p2zrxa"
+        >
+          <img
+            alt="Microsoft Icon"
+            src="test-file-stub"
+            style={
+              {
+                "height": "35px",
+                "marginRight": "20px",
+                "width": "auto",
+              }
+            }
+          />
+          <img
+            alt="Godaddy Icon"
+            src="test-file-stub"
+            style={
+              {
+                "height": "25px",
+                "width": "auto",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5 css-k3f0g4-MuiGrid-root"
+    >
+      <img
+        alt="Work Doodle"
+        src="test-file-stub"
+        style={
+          {
+            "borderRadius": "50%",
+            "height": "300px",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -6,12 +6,12 @@ import GodaddyIcon from "../../assets/logos/godaddy.svg";
 
 export default function Landing() {
 	return (
-		<Container>
+		<Container data-testid="landing-component">
 			<Grid
 				container
 				rowSpacing={1}
 				columnSpacing={{ xs: 1, sm: 2, md: 4 }}
-				sx={{ display: "flex", alignItems: "center", padding:"0" }}
+				sx={{ display: "flex", alignItems: "center", padding: "0" }}
 				p
 			>
 				<Grid item xs={7}>
@@ -35,12 +35,12 @@ export default function Landing() {
 						>
 							<img
 								src={MicrosoftIcon}
-								alt="Work Doodle"
+								alt="Microsoft Icon"
 								style={{ width: "auto", height: "35px", marginRight: "20px" }}
 							/>
 							<img
 								src={GodaddyIcon}
-								alt="Work Doodle"
+								alt="Godaddy Icon"
 								style={{ width: "auto", height: "25px" }}
 							/>
 						</Box>

@@ -16,7 +16,7 @@ const Navbar = () => {
 				py="10px"
 			>
 				<Link to="/">
-					<img src={Logo} className="logo" />
+					<img src={Logo} className="logo" alt="Logo" />
 				</Link>
 				<Stack direction="row" justifyContent="space-between" width="100%">
 					<Stack
